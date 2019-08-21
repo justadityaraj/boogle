@@ -1,1 +1,2 @@
-<?php //vscode git settings check - commit config
+<?php //vscode git settings check - commit config.
+//atom
