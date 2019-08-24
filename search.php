@@ -14,7 +14,9 @@
         <div class="header">
             <div class="headerContent">
                 <div class="logoContainer">
+                    <a href="index.php">
                     <img src="assets/images/boogle-logo.png" alt="">
+                    </a>
                 </div> 
             </div>
         </div>
