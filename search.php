@@ -18,7 +18,16 @@
                     <img src="assets/images/boogle-logo.png" alt="">
                     </a>
                 </div> 
-                <div class="searchContainer"></div>
+                <div class="searchContainer">
+                    <form action="search.php" method="GET">
+                        <div class="searchBarContainer">
+                            <input class="searchBox" type="text">
+                            <button>
+                                Search
+                            </button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
