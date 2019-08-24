@@ -80,3 +80,9 @@ body {
 	display: flex;
 	align-items: center;
 }
+.headerContent .searchContainer {
+	flex: 1;
+}
+.headerContent .searchContainer form {
+	margin15px 0 28px 0;
+}
