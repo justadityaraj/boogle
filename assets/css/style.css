@@ -24,4 +24,19 @@ body {
 
 .mainSection .searchContainer {
 	margin-top: 20px;
+	width: 100%;
+}
+
+.mainSection .searchContainer form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.searchContainer .searchButton {
+	color: #757575;
+	background-color: #f5f5f5;
+	border: none;
+	height: 36px;
+	width: 125px;
+	border-radius: 1px;
 }
