@@ -18,6 +18,7 @@
                     <img src="assets/images/boogle-logo.png" alt="">
                     </a>
                 </div> 
+                <div class="searchContainer"></div>
             </div>
         </div>
     </div>
