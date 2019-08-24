@@ -71,9 +71,12 @@ body {
 	border-bottom: 1px solid #ebebeb;
 
 }
-
 .headerContent .logoContainer {
 	width: 150px;
 	padding: 5px 20px;
 	box-sizing: border-box:
+}
+.wrapper .headerContent {
+	display: flex;
+	align-items: center;
 }
