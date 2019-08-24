@@ -45,3 +45,7 @@ body {
 	cursor: pointer;
 	outline: none;
 }
+.mainSection .searchContainer .searchBox {
+	border: none;
+	background-color: #f5f5f5;
+}
