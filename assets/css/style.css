@@ -96,3 +96,6 @@ body {
 	box-sizing: border-box;
 	display: flex;
 }
+.headerContent .searchBarContainer .searchBox {
+	flex: 1;
+}
