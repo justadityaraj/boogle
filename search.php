@@ -1,3 +1,6 @@
+<?php
+$term = $_GET["term"];
+?>
 <!DOCTYPE html>
 <html lang="en">
 
