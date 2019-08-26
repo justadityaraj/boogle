@@ -13,7 +13,7 @@
     <div class="wrapper indexPage">
         <div class="mainSection">
             <div class="logoContainer">
-                <img src="assets/images/boogle-logo.png" alt="Boogle">
+                <a href="https://github.com/justadityaraj"><img src="assets/images/boogle-logo.png" alt="Boogle"></a>
             </div>
             <div class="searchContainer">
                 <form action="search.php" method="GET">

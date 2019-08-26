@@ -52,7 +52,9 @@ if (isset($_GET["term"])) {
                     <li>
                         <a href='<?php echo "search.php?term=$term&type=images"; ?>'>Images</a>
                     </li>
-
+                    <li>
+                        <a href="https://github.com/justadityaraj/boogle">Repo</a>
+                    </li>
                 </ul>
             </div>
 
