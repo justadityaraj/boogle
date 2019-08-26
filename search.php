@@ -39,8 +39,9 @@
 
             <div class="tabsContainer">
                 <ul class="tabList">
-                    <li>Sites</li>
-                    <li>images</li>
+                    <li>
+                        <a href=''></a>
+                    </li>
 
                 </ul>
             </div>
