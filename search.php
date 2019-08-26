@@ -49,10 +49,10 @@ $type = isset($_GET["type"]) ? $_GET["type"] : "sites";
 
             <div class="tabsContainer">
                 <ul class="tabList">
-                    <li>
+                    <li class="<?php echo $type == 'sites' ? 'active' : '' ?>">
                         <a href='<?php echo "search.php?term=$term&type=sites"; ?>'>Sites</a>
                     </li>
-                    <li>
+                    <li class="<?php echo $type == 'images' ? 'active' : '' ?>">
                         <a href='<?php echo "search.php?term=$term&type=images"; ?>'>Images</a>
                     </li>
                     <li>
