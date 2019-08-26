@@ -36,6 +36,15 @@
                     </form>
                 </div>
             </div>
+
+            <div class="tabsContainer">
+                <ul class="tabList">
+                    <li>Sites</li>
+                    <li>images</li>
+
+                </ul>
+            </div>
+
         </div>
     </div>
 </body>
