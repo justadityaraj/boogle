@@ -113,9 +113,9 @@ body {
 	display: flex;
 	justify-content: center;
 }
-/* .headerContent .searchBarContainer .searchButton img {
-	width: 22px;
-} */
+.headerContent .searchBarContainer .searchButton img {
+	width: 25px;
+}
 .tabsContainer {
 	margin-left: 150px;
 }
