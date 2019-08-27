@@ -1,8 +1,9 @@
 <?php
-function followLinks() {
+function followLinks($url) {
+
+        
 
 }
 
 $startUrl = "https://www.adityaraj.com";
-followLinks($startUrl)
-?>
+followLinks($startUrl);
