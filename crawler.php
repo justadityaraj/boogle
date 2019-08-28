@@ -13,7 +13,7 @@ function createLink($src, $url) {
         $src = $scheme . "://" . $host . $src;
     }
     else if (substr($src, 0, 2) == "./"){
-        
+        $src = $scheme . "://" . $host . dirname(parse_url($url)["path"]) . substr($src, 1);
     }
     return $src;
 }
