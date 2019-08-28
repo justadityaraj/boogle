@@ -2,7 +2,16 @@
 include("classes/documentParser.php")
 
 function createLinks($src, $url) {
-    echo "SRC: $src \n";
+
+    $scheme = parse_url($url)["scheme"]; //http
+    $host = parse_url($url)["host"]; //exm.php
+
+    if(substr($src, 0, 2) == "//") {
+        $src = parse_url ($url)["scheme"] . ":" . $src;
+    }
+    else if (substr($src, 0, 2) == "/") {
+        $src = $scheme . "://" . $host . $src;
+    }
 }
 function followLinks($url) {
         $parser = new documentParser($url);
