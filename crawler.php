@@ -18,6 +18,10 @@ function createLink($src, $url) {
     else if (substr($src, 0, 2, 3) == "../"){
         $src = $scheme . "://" . $host . "/" . src;
     }
+    else if (substr($src, 0, 2, 5) != "https" && substr($src, 0, 5) != "http"){
+        $src = $scheme . "://" . $host . "/" . src;
+    }
+
     return $src;
 }
 function followLinks($url) {
