@@ -1,8 +1,8 @@
 <?php
 function documentParser {
 
-    public function __construct() {
-        
+    public function __construct($url) {
+        echo $url;
     }
 
 }
