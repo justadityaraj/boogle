@@ -1,7 +1,8 @@
 <?php
+include("classes/documentParser.php")
 function followLinks($url) {
 
-        
+        $parser = new documentParser($url);
 
 }
 
