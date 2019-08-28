@@ -15,6 +15,9 @@ function createLink($src, $url) {
     else if (substr($src, 0, 2) == "./"){
         $src = $scheme . "://" . $host . dirname(parse_url($url)["path"]) . substr($src, 1);
     }
+    else if (substr($src, 0, 2, 3) == "../"){
+        $src = $scheme . "://" . $host . "/" . src;
+    }
     return $src;
 }
 function followLinks($url) {
