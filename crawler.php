@@ -1,7 +1,7 @@
 <?php
 include("classes/documentParser.php")
 
-function createLinks($src, $url) {
+function createLink($src, $url) {
 
     $scheme = parse_url($url)["scheme"]; //http
     $host = parse_url($url)["host"]; //exm.php
@@ -12,6 +12,10 @@ function createLinks($src, $url) {
     else if (substr($src, 0, 2) == "/") {
         $src = $scheme . "://" . $host . $src;
     }
+    else if (substr($src, 0, 2) == "./"){
+        
+    }
+    return $src;
 }
 function followLinks($url) {
         $parser = new documentParser($url);
@@ -25,6 +29,9 @@ function followLinks($url) {
             else if(substr($href, 0, 11) == "javascript:") {
                 continue;
             }
+
+            $href = $createLink($href, $url);
+            echo $href . "<br>";
         }
 }
 $startUrl = "http://www.bbc.com";
