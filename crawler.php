@@ -29,6 +29,10 @@ function getDetails($url)
     $parser = new documentParser($url);
     $titleArray = $parser->getTitletags();
     $title = $titleArray->item(0)->nodeValue;
+    $title = str_replace("\n","",$title);
+    if ($title == "") {
+        return;
+    }
 }
 
 function followLinks($url)
