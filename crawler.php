@@ -25,6 +25,9 @@ function createLink($src, $url)
 }
 function followLinks($url)
 {
+    global $alreadyCrawled;
+    $crawling;
+
     $parser = new documentParser($url);
     $linkList = $parser->getLinks();
     foreach ($linkList as $link) {
@@ -45,6 +48,10 @@ function followLinks($url)
         }
 
         echo $href . "<br>";
+    }
+    array_shift($crawling);
+    foreach ($crawling as $site) {
+        followLinks($site);
     }
 }
 $startUrl = "http://www.bbc.com";
