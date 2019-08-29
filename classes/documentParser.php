@@ -14,5 +14,8 @@ class documentParser {
     public function getLinks() {
         return $this->doc->getElementsByTagName("a");
     }
+    public function getTitletags() {
+        return $this->doc->getElementsByTagName("title");
+    }
 }
 ?>

@@ -23,10 +23,18 @@ function createLink($src, $url)
 
     return $src;
 }
+
+function getDetails($url)
+{
+    $parser = new documentParser($url);
+    $titleArray = $parser->getTitletags();
+    $title = $titleArray->item(0)->nodeValue;
+}
+
 function followLinks($url)
 {
     global $alreadyCrawled;
-    $crawling;
+    global $crawling;
 
     $parser = new documentParser($url);
     $linkList = $parser->getLinks();
