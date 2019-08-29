@@ -1,6 +1,9 @@
 <?php
 include("classes/documentParser.php");
 
+$alreadyCrawled = array();
+$crawling = array();
+
 function createLink($src, $url)
 {
     $scheme = parse_url($url)["scheme"]; //http
@@ -34,6 +37,13 @@ function followLinks($url)
         }
 
         $href = $createLink($href, $url);
+
+        if (!in_array($href, $alreadyCrawled)) {
+            $alreadyCrawled[] = $href;
+            $crawling[] = $href;
+            //Insert href
+        }
+
         echo $href . "<br>";
     }
 }
