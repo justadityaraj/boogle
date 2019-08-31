@@ -28,8 +28,17 @@ function getDetails($url)
 {
 	$parser = new DomDocumentParser($url);
 	$titleArray = $parser->getTitletags();
+
+	if (sizeof($titleArray) == 0 || $titleArray->item(0) == NULL) {
+		return;
+	}
+
 	$title = $titleArray->item(0)->nodeValue;
 	$title = str_replace("\n", "", $title);
+	if ($title == "") {
+		return;
+	}
+	echo "URL: $url, Title: $title<br>";
 }
 
 function followLinks($url)
@@ -59,11 +68,8 @@ function followLinks($url)
 			$alreadyCrawled[] = $href;
 			$crawling[] = $href;
 
-			// Insert $href
-		}
-
-
-		echo $href . "<br>";
+			getDetails($href);
+		} else return;
 	}
 
 	array_shift($crawling);
