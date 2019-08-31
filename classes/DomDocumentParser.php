@@ -17,5 +17,7 @@ class DomDocumentParser {
 	public function getlinks() {
 		return $this->doc->getElementsByTagName("a");
 	}
-
+	public function getlinks() {
+		return $this->doc->getElementsByTagName("a");
+	}
 }
