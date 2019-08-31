@@ -27,6 +27,9 @@ function createLink($src, $url)
 function getDetails($url)
 {
 	$parser = new DomDocumentParser($url);
+	$titleArray = $parser->getTitletags();
+	$title = $titleArray->item(0)->nodeValue;
+	$title = str_replace("\n", "", $title);
 }
 
 function followLinks($url)
