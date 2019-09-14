@@ -33,6 +33,21 @@ function insertLink($url, $title, $description, $keywords)
 	return $query->execute();
 }
 
+function insertImage($url, $src, $alt, $title)
+{
+	global $con;
+
+	$query = $con->prepare("INSERT INTO images(siteUrl, imageUrl, alt, title)
+							VALUES(:siteUrl, :imageUrl, :alt, :title)");
+
+	$query->bindParam(":siteUrl", $url);
+	$query->bindParam(":imageUrl", $src);
+	$query->bindParam(":alt", $alt);
+	$query->bindParam(":title", $title);
+
+	return $query->execute();
+}
+
 function createLink($src, $url)
 {
 
@@ -56,6 +71,8 @@ function createLink($src, $url)
 
 function getDetails($url)
 {
+
+	global $alreadyFoundImages;
 
 	$parser = new DomDocumentParser($url);
 
@@ -100,7 +117,7 @@ function getDetails($url)
 		echo "ERROR: Failed to insert $url<br>";
 	}
 
-	$imageArray = $parser->getImages(); //Images > DDP
+	$imageArray = $parser->getImages();
 	foreach ($imageArray as $image) {
 		$src = $image->getAttribute("src");
 		$alt = $image->getAttribute("alt");
@@ -115,7 +132,7 @@ function getDetails($url)
 		if (!in_array($src, $alreadyFoundImages)) {
 			$alreadyFoundImages[] = $src;
 
-			//Insert the image
+			echo "INSERT: " . insertImage($url, $src, $alt, $title);
 		}
 	}
 }
@@ -148,7 +165,7 @@ function followLinks($url)
 			$crawling[] = $href;
 
 			getDetails($href);
-		} else return;
+		}
 	}
 
 	array_shift($crawling);
@@ -158,5 +175,5 @@ function followLinks($url)
 	}
 }
 
-$startUrl = "http://www.bbc.com";
+$startUrl = "http://www.reecekenney.com";
 followLinks($startUrl);
